@@ -45,8 +45,18 @@ def list_of_ledger(request):
 def list_of_groups(request):
     return render(request,'list_of_groups.html')
 
+def list_of_voucher_type(request):
+    return render(request,'list_of_voucher_type.html')
+
 def load_create_ledger(request):
     return render(request,'load_create_ledger.html')
+
+def load_create_ledger2(request):
+    return render(request,'load_create_ledger2.html')
+
+def load_voucher_type(request):
+    return render(request,'load_voucher_type.html')
+
 
 def create_group(request):
     if request.method == 'POST':

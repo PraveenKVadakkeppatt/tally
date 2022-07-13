@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+    {% block body %}
+    {% load static %}
+    <style>
+        .enter{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        /* h5{
+            border-bottom: 1px solid white;
+            border-bottom-width: 10px;
+    
+        }
+         */
+    </style>
+
+  <div class="m-0">
+        <h6  class="bg-info text-light p-2 m-0 text-center">Ledger Creation</h6>
+        <form class="p-5" style="background-color:rgba(0,0,0,.4);">
+            <div class="p-3">
+                <div class="row container-fluid  p-2 m-0">
+                    <div class="col-sm-2 m-0 p-0"> <label for="a">Name</label></div>
+                    <div class="col-sm-3 m-0 p-0"><input type="text" class="form-control" id="a" placeholder=""></div>
+                    <div class="col-sm-7 m-0 p-0"></div>
+                </div>
+                <div class="row container-fluid  p-2 m-0">
+                    <div class="col-sm-2 m-0 p-0"> <label for="b">Alias</label></div>
+                    <div class="col-sm-3 m-0 p-0"> 
+                    <input type="text" class="form-control" id="b" placeholder=""></div>
+                    <div class="col-sm-7 m-0 p-0"></div>
+                </div>
+            </div> 
+            <div class="row container-fluid  p-0 m-0" style=" border: 1px solid rgba(128, 128, 128, 0.6);">
+                <div class="col-sm-6 m-0 p-4" style=" border-right: 1px solid rgba(128, 128, 128, 0.6);">
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="c">Under</label></div>
+                        <div class="col-sm-6 m-0 p-0">
+                            <select name="optional" id="i" class="form-control">
+                                    <option value="BankAccount1">BankAccouts</option>
+                                    <option value="Bank_OCC_AC">Bank OCC A/c</option>
+                                    <option value="Bankod1">Bank OD A/c</option>
+                                    <option value="Bank_Account">Branch Divisions</option>
+                                    <option value="Bank_Account">Capital Amount</option>
+                                    <option value="Bank_Account">Cash in Hand</option>
+                                    <option value="curntasts1">Current Assets</option>
+                                    <option value="current_liabilities">Current Liabilities</option>
+                                    <option value="Bank_Account">Deposits (Asset)</option>
+                                    <option value="dirctexpncs1">Direct Expenses</option>
+                                    <option value="dirctincome">Direct Incomes</option>
+                                    <option value="dutiesAndtax">Duties and Taxes</option>
+                                    <option value="Expences_Direct">Expenses(Direct)</option>
+                                    <option value="Expences_Indirect">Expenses(Indirect)</option>
+                                    <option value="Fixed_Assets">Fixed Assets</option>
+                                    <option value="income_direct">Income (Direct)</option>
+                                    <option value="income_Indirect">Income (Indirect)</option>
+                                    <option value="Investments">Investments</option>
+                                    <option value="loans_advance">Loans & Advances (Asset)</option>
+                                    <option value="Loans_liability">Loans (Liability)</option>
+                                    <option value="Mis_Expenses">Misc. Expenses (Asset)</option>
+                                    <option value="provisions">provisions</option>
+                                    <option value="Purchase_Account">Purchase Accounts</option>
+                                    <option value="retained">Retained Earnings</option>
+                                    <option value="Sales_Account">Sales Accounts</option>
+                                    <option value="Secured_loans">Secured Loans</option>
+                                    <option value="stock">Stock-in-Hand</option>
+                                    <option value="Sundry_Creditors">Sundry Creditors</option>
+                                    <option value="Sundry_Debtors">Sundry Debtors</option>
+                                    <option value="Suspence">Suspence A/c</option>
+                                    <option value="Unsecured_loans">Unsecured Loans</option>
+                                    
+                                    
+                            </select>
+                            
+                        </div>
+                       
+                        
+                    </div>
+                </div>
+                <div class="col-sm-6 m-0 p-4" style=" border-right: 1px solid rgba(128, 128, 128, 0.6);">
+                    <h5 class="text-center">Mailing Details</h5>
+                    <div class="row container-fluid  p-0">
+                        <div class="col-sm-6 m-0 p-0"></div>
+                        <div class="col-sm-6 m-0 p-0"></div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d">Name</label></div>
+                        <div class="col-sm-6 m-0 p-0"><input type="text" class="form-control" id="c" placeholder=""></div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d">Address</label></div>
+                        <div class="col-sm-6 m-0 p-0"><input type="textarea" class="form-control" id="d" placeholder=""></div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d">State</label></div>
+                        <div class="col-sm-6 m-0 p-0"><input type="text" class="form-control" id="d" placeholder=""></div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d">Country</label></div>
+                        <div class="col-sm-6 m-0 p-0"><input type="text" class="form-control" id="d" placeholder=""></div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d">Pin Code</label></div>
+                        <div class="col-sm-6 m-0 p-0"><input type="text" class="form-control" id="d" placeholder=""></div>
+                    </div>
+                    <h5 class="text-center">Banking Details</h5>
+                    <div class="row container-fluid  p-0">
+                        <div class="col-sm-6 m-0 p-0"></div>
+                        <div class="col-sm-6 m-0 p-0"></div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="e">Provide Bank details</label></div>
+                        <div class="col-sm-6 m-0 p-0">
+                            <select name="Activate" id="e" class="form-control">
+                                <option value="No">No</option> 
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <h5 class="text-center">Tax Registration Details</h5>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="e">PAN / IT No.</label></div>
+                        <div class="col-sm-6 m-0 p-0"><input type="text" class="form-control" id="c" placeholder=""></div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="e">Registration Type</label></div>
+                        <div class="col-sm-6 m-0 p-0">
+                            <select name="Activate" id="e" class="form-control">
+                                <option value="">Unknown</option> 
+                                <option value="">Composition</option>
+                                <option value="">Consumer</option>
+                                <option value="" selected>Regular</option>
+                                <option value="">Unregistred</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="e">GSTIN / UIN</label></div>
+                            <div class="col-sm-6 m-0 p-0"><input type="text" class="form-control" id="c" placeholder=""></div>
+                    </div>
+                </div>
+            </div> 
+            <div class="row container-fluid  p-0 m-0" style=" border: 1px solid rgba(128, 128, 128, 0.6);">
+                <div class="col-sm-4 m-0 p-4"></div>
+                <div class="col-sm-5 m-0 p-4">
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d"></label>Opening Balance (On 1-Apr-22)</div>
+                        <div class="col-sm-6 m-0 p-0"><input type="text" class="form-control" id="d" placeholder=""></div>
+                    </div>
+                </div>
+                <div class="col-sm-4 m-0 p-4"></div>
+            </div>
+
+            <div class="enter w-100 py-4"><button class="btn btn-info w-25">CREATE</button></div>       
+        </form>
+    </div>     
+{% endblock %}

@@ -13,10 +13,14 @@ urlpatterns = [
     path('ledger',views.ledger,name='ledger'),
     path('list_of_ledger',views.list_of_ledger,name='list_of_ledger'),
     path('load_create_ledger',views.load_create_ledger,name='load_create_ledger'),
+    path('load_create_ledger2',views.load_create_ledger2,name='load_create_ledger2'),
+
     path('primary',views.primary,name='primary'),
     path('costcat',views.costcat,name='costcat'),
     path('costcentr',views.costcentr,name='costcentr'),
     path('voucher',views.voucher,name='voucher'),
+    path('list_of_voucher_type',views.list_of_voucher_type,name='list_of_voucher_type'),
+    path('load_voucher_type',views.load_voucher_type,name='load_voucher_type'),
     path('vouchpage',views.vouchpage,name='vouchpage'),
 
 
