@@ -13,12 +13,12 @@ def index(request):
     return render(request, 'home.html')
 
 def group(request):
-    grp = GroupModel.objects.all()
-    context={'grp':grp}
-    return render(request,'groups.html',context)
+    obj=GroupModel.objects.all().filter(under ='curntasts1')
+    return render(request, 'groups.html')
 
 def branch(request):
-    return render(request, 'branch.html')
+    context={ 'name':'Branch/Division' }
+    return render(request, 'branch.html',context)
 
 def ledger(request):
     return render(request, 'ledger.html')
@@ -48,6 +48,9 @@ def list_of_groups(request):
 def list_of_voucher_type(request):
     return render(request,'list_of_voucher_type.html')
 
+def list_of_currency(request):
+    return render(request,'list_of_currency.html')
+
 def load_create_ledger(request):
     return render(request,'load_create_ledger.html')
 
@@ -56,6 +59,9 @@ def load_create_ledger2(request):
 
 def load_voucher_type(request):
     return render(request,'load_voucher_type.html')
+
+def load_currency(request):
+    return render(request,'load_currency.html')
 
 
 def create_group(request):

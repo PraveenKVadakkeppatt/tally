@@ -14,6 +14,8 @@ urlpatterns = [
     path('list_of_ledger',views.list_of_ledger,name='list_of_ledger'),
     path('load_create_ledger',views.load_create_ledger,name='load_create_ledger'),
     path('load_create_ledger2',views.load_create_ledger2,name='load_create_ledger2'),
+    path('list_of_currency',views.list_of_currency,name='list_of_currency'),
+    path('load_currency',views.load_currency,name='load_currency'),
 
     path('primary',views.primary,name='primary'),
     path('costcat',views.costcat,name='costcat'),

@@ -11,7 +11,8 @@
 </style>
 
 <div class="m-0">
-<h6 class="bg-info text-light p-2 m-0 text-center">Create ledger</h6>
+    <a href="javascript:history.go(-1);" class="close">+</a>
+<h6 class="bg-info text-light p-2 m-0 " style="text-align: center;">Create ledger</h6>
         <form  style="background-color:rgba(0,0,0,.4);" method="post" action="save_ledger">
             {% csrf_token %}
             
@@ -24,7 +25,7 @@
                         <div class="col-sm-8 m-0 p-0"><input required type="text" class="form-control" id="ledger_name" oninput="addname()" placeholder="" name="ledger_name"></div>
                     </div>
 
-                    <div class="row container-fluid  p-2 m-0">
+                        <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4 m-0 p-0"> <label for="b">Alias</label></div>
                         <div class="col-sm-8 m-0 p-0"> 
                         <input type="text" class="form-control" id="b" placeholder="" name="ledger_alias"></div>
@@ -1481,13 +1482,14 @@ function bill(){
                 
                     </div>
             </div>
-        </div><div class="row container-fluid  p-2 my-2">
+        </div>
+            <div class="row container-fluid  p-2 my-2">
             <div class="col-sm-4 m-0 p-0"></div>
             <div class="col-sm-2 m-0 p-0"> <p for="setgst" class="text-center p-2 m-0" style="height:100%;" >Opening balance (on 1-Aprl-22)</p></div>
-            <div class="col-sm-2 m-0 p-0"><input type="text" class="form-control" name="ledger_opening_bal" id="opening_balance" placeholder=""></div>
+            <div class="col-sm-2 m-0 p-20"><input type="text" class="form-control" name="ledger_opening_bal" id="opening_balance" placeholder=""></div>
             <div class="col-sm-4 m-0 p-0"></div>
         </div>
-            <div class="enter w-100 py-4"><button class="btn btn-info w-25 px-4">CREATE</button></div>   
+            <div class="enter w-100 py-4"><button class="btn btn-info w-15 px-4">CREATE</button></div>   
             
         </form>
     </div>
