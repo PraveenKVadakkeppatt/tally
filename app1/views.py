@@ -51,6 +51,9 @@ def list_of_voucher_type(request):
 def list_of_currency(request):
     return render(request,'list_of_currency.html')
 
+def list_of_companies(request):
+    return render(request,'list_of_companies.html')
+
 def load_create_ledger(request):
     return render(request,'load_create_ledger.html')
 
@@ -62,6 +65,9 @@ def load_voucher_type(request):
 
 def load_currency(request):
     return render(request,'load_currency.html')
+
+def create_company(request):
+    return render(request,'create_company.html')
 
 
 def create_group(request):
@@ -93,6 +99,5 @@ def create_group(request):
         messages.info(request,'GROUP CREATED SUCCESSFULLY')
         return render(request,'groups.html',context)
         
-
 
 

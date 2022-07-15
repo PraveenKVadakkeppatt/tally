@@ -36,6 +36,8 @@
     <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}" />
     <!-- App CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/app.css' %}" />
+    <!-- Country&state -->
+    <script src="{% static 'js/country.states.js' %}"></script>
     <style>
         .a {
             font-family: "Poppins", sans-serif;
@@ -250,6 +252,8 @@
                                 </li>
                                 <li><a href="list_of_voucher_type"><i class="bx bx-right-arrow-alt"></i>Voucher Type</a>
                                 </li>
+                                <li><a href="list_of_companies"><i class="bx bx-right-arrow-alt"></i>Change Company</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
@@ -463,7 +467,7 @@
     <script src="{% static 'assets/js/index.js' %}"></script>
     <!-- App JS -->
     <script src="{% static 'assets/js/app.js' %}"></script>
-
+    
     <script>
         new PerfectScrollbar('.dashboard-social-list');
         new PerfectScrollbar('.dashboard-top-countries');
