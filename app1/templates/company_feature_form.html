@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<style>
+    .enter{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .hide{
+        display:none;
+    }
+</style>
+
+
+<div class="m-0">
+    <a href="javascript:history.go(-1);" class="close">+</a>
+<h6 class="bg-info text-light p-2 m-0 text-center">Voucher type Alteration</h6>
+
+        <form class="p-0"  method="post" style="background-color:rgba(0,0,0,.4);">
+            {% csrf_token %}
+            <div class="modal-body "></div>
+            
+            <div class="text-center border-bottom p-3 mt-0">
+                    <h4 class="m-0 p-0 text-center">Company created successfully</h4>
+                        <p>(Enable the features as per your bussinss needs.)</p>
+            </div>
+            <div class="row p-4 border-bottom">
+                <h5 class="modal-title">Company: </h5>
+                
+            </div>
+            
+            
+{% endblock %}

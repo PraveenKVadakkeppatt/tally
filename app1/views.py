@@ -69,6 +69,12 @@ def load_currency(request):
 def create_company(request):
     return render(request,'create_company.html')
 
+def company_feature_form(request):
+    return render(request,'company_feature_form.html')
+
+def load_rates_of_exchange(request):
+    return render(request,'load_rates_of_exchange.html')
+
 
 def create_group(request):
     if request.method == 'POST':

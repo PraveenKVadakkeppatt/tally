@@ -18,6 +18,8 @@ urlpatterns = [
     path('load_currency',views.load_currency,name='load_currency'),
     path('list_of_companies',views.list_of_companies,name='list_of_companies'),
     path('create_company',views.create_company,name='create_company'),
+    path('company_feature_form',views.company_feature_form,name='company_feature_form'),
+    path('load_rates_of_exchange',views.load_rates_of_exchange,name='load_rates_of_exchange'),
 
     path('primary',views.primary,name='primary'),
     path('costcat',views.costcat,name='costcat'),
