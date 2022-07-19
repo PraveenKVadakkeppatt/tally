@@ -57,6 +57,10 @@ def list_of_companies(request):
 def load_create_ledger(request):
     return render(request,'load_create_ledger.html')
 
+def load_create_groups(request):
+    return render(request,'load_create_groups.html')
+    
+
 def load_create_ledger2(request):
     return render(request,'load_create_ledger2.html')
 
@@ -74,6 +78,18 @@ def company_feature_form(request):
 
 def load_rates_of_exchange(request):
     return render(request,'load_rates_of_exchange.html')
+
+def create_currency(request):
+    return render(request,'create_currency.html')
+
+def load_alter_currency(request):
+    return render(request,'load_alter_currency.html')
+
+def gst_details(request):
+    return render(request,'gst_details.html')
+
+
+
 
 
 def create_group(request):

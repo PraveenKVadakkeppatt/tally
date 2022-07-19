@@ -8,6 +8,8 @@ urlpatterns = [
     path('index',views.index,name='index'),
     path('group',views.group,name='group'),
     path('list_of_groups',views.list_of_groups,name='list_of_groups'),
+    path('load_create_groups',views.load_create_groups,name='load_create_groups'),
+
     path('create_group',views.create_group,name="create_group"),
     path('branch',views.branch,name='branch'),
     path('ledger',views.ledger,name='ledger'),
@@ -20,6 +22,10 @@ urlpatterns = [
     path('create_company',views.create_company,name='create_company'),
     path('company_feature_form',views.company_feature_form,name='company_feature_form'),
     path('load_rates_of_exchange',views.load_rates_of_exchange,name='load_rates_of_exchange'),
+    path('create_currency',views.create_currency,name='create_currency'),
+    path('load_alter_currency',views.load_alter_currency,name='load_alter_currency'),
+    path('gst_details',views.gst_details,name='gst_details'),
+
 
     path('primary',views.primary,name='primary'),
     path('costcat',views.costcat,name='costcat'),

@@ -40,43 +40,45 @@
         <div class="col-sm-3 m-0 p-0"></div>
         <div class="col-sm-6 m-0 p-0" style=" background-color:rgba(0,0,0,0.2);">
             <a href="javascript:history.go(-1);" class="close">+</a>
-        <h6 class="bg-info text-light p-2" style="text-align: center;">Currency Alteration</h6>
+        <h6  class="bg-info text-light p-2">Currency creations</h6>
         <div class="row container-fluid">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
-                <form action="create_currency" method="post">
-                    {% csrf_token %}
+                <form action="" method="post">
                     <label for="a">Symbol</label>
-                    <input type="text" class="form-control" id="a" placeholder="" >
+                    <input type="text" class="form-control" id="a" placeholder="" value="₹">
                     <label for="b">Formal Name</label>
-                    <input type="text" class="form-control" id="b" placeholder="">
+                    <input type="text" class="form-control" id="b" placeholder="" value="Indian rupee">
                     <label for="c">ISO Currency Code</label>
-                    <input type="text" class="form-control" id="c" placeholder="">
+                    <input type="text" class="form-control" id="c" placeholder="" value="INR">
                     <label for="d">Number of Decimal places</label>
-                    <input type="text" class="form-control" id="d" placeholder="">
+                    <input type="text" class="form-control" id="d" placeholder="" value="10">
                     <label for="e">Show amount in millions</label>
-                    <select  id="e" class="form-control" name="smt_millon">
+                    <select name="million" id="e" class="form-control">
                         <option value="No">No</option> 
                         <option value="Yes">Yes</option>
                     </select>
                     <label for="f">Suffix symbol to amount</label>
-                    <select id="f" class="form-control" name="symbol_to_amount">
+                    <select name="million" id="f" class="form-control">
                         <option value="No">No</option> 
                         <option value="Yes">Yes</option>
                     </select>
 
                     <label for="g">Add space between symbol and amount</label>
-                    <select id="g" class="form-control" name="space_bt_sy">
+                    <select name="million" id="g" class="form-control">
                         <option value="No">No</option> 
                         <option value="Yes">Yes</option>
                     </select>
                     <label for="h">Word representing amount after decimal</label>
-                    <input type="text" class="form-control" id="h" placeholder=""  name="amount_after_decimal">
+                    <input type="text" class="form-control" id="h" placeholder="" value="Paisa">
 
                     <label for="i">No, of decimal places for amount in words</label>
-                    <input type="text" class="form-control" id="h" placeholder="" name="amount_in_words">
+                    <select name="million" id="i" class="form-control">
+                        <option value="No">No</option> 
+                        <option value="Yes">Yes</option>
+                    </select>
                     <div class="flexy">
-                        <button type="submit" class="btn btn-info w-15 my-2" >Create</button>
+                        <button type="submit" class="btn btn-info w-50 my-2" >Create</button>
                     </div>
                    
 

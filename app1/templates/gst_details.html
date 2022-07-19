@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+    {% block body %}
+    {% load static %}
+
+    <div class="m-0">
+        <a href="javascript:history.go(-1);" class="close">+</a>
+        <h6 class="bg-info text-light p-2 m-0 text-center ">GST Details</h6>
+        <form class="p-5" style="background-color: rgba(0,0,0,0.4);">
+            <div class="p-3">
+                <div class="row container-fluid p-2 m-0 ">
+                    <div class="col-sm-3 m-0 p-0"><h4>GST Registration Details</h4></div>
+
+                </div>
+                <div class="row container-fluid  p-2 m-0">
+                    <div class="col-sm-2 m-0 p-0"> <label for="a">State</label></div>
+                    <div class="col-sm-3 m-0 p-0"><input type="text" class="form-control" id="a" placeholder=""></div>
+                    <div class="col-sm-7 m-0 p-0"></div>
+                </div><div class="row container-fluid  p-2 m-0">
+                    <div class="col-sm-2 m-0 p-0"> <label for="b">Registration Type</label></div>
+                    <div class="col-sm-3 m-0 p-0"><input type="text" class="form-control" id="b" placeholder=""></div>
+                    <div class="col-sm-7 m-0 p-0"></div>
+                </div>
+
+                    
+            
+                </div>
+        </form>
+    </div>
+
+
+
+    {% endblock %}
