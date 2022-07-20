@@ -88,6 +88,9 @@ def load_alter_currency(request):
 def gst_details(request):
     return render(request,'gst_details.html')
 
+def tds_detuctor(request):
+    return render(request,'tds_detuctor.html')
+
 
 
 

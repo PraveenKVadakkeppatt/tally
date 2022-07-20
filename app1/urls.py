@@ -25,6 +25,8 @@ urlpatterns = [
     path('create_currency',views.create_currency,name='create_currency'),
     path('load_alter_currency',views.load_alter_currency,name='load_alter_currency'),
     path('gst_details',views.gst_details,name='gst_details'),
+    path('tds_detuctor',views.tds_detuctor,name='tds_detuctor'),
+
 
 
     path('primary',views.primary,name='primary'),
