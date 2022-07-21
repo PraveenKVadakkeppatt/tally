@@ -1,5 +1,4 @@
-
-    {% extends 'base.html' %}
+{% extends 'base.html' %}
     {% block body %}
     {% load static %}
     <style>
@@ -40,12 +39,17 @@
     <div class="m-3">
     <div class="card">
         <h5 style="background-color:rgb(103, 175, 220) ; color:white; text-align: left; padding: 5px 0; width:100%;">List of companies</h5>
-        
+        <div class="row" style="width: 100%;text-align:left;background-color: rgba(240, 248, 255, 0);border: none;">
+            <div class="col-md-4">Data Path/Name</div>
+            <div class="col-md-3">Number</div>
+            <div class="col-md-5">Period</div>
+        </div>
         
             <br>
             <a href="#"><button  class="btns_prnt" id="create"><h6>Create Company</h6></button></a>
-            <a href=""><button  class="btns_prnt" id="create"><h6>Select Company</h6></button></a>
-            <a href=""><button  class="btns_prnt" id="create"><h6>Shut Company</h6></button></a>
+            <a href=""><button  class="btns_prnt" id="create"><h6>Select Remote Company</h6></button></a>
+            <a href=""><button  class="btns_prnt" id="create"><h6>Specify Path</h6></button></a>
+            <a href=""><button  class="btns_prnt" id="create"><h6>Select From Drive</h6></button></a>
             <hr>
             
           

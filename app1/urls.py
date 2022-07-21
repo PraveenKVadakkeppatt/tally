@@ -21,9 +21,17 @@ urlpatterns = [
     path('list_of_companies',views.list_of_companies,name='list_of_companies'),
     path('create_company',views.create_company,name='create_company'),
     path('company_feature_form',views.company_feature_form,name='company_feature_form'),
+    path('select_company',views.select_company,name='select_company'),
+    path('shut_company',views.shut_company,name='shut_company'),
+    path('shut_card',views.shut_card,name='shut_card'),
+
+
+
     path('load_rates_of_exchange',views.load_rates_of_exchange,name='load_rates_of_exchange'),
     path('create_currency',views.create_currency,name='create_currency'),
     path('load_alter_currency',views.load_alter_currency,name='load_alter_currency'),
+    path('currency_alteraion',views.currency_alteraion,name='currency_alteraion'),
+
     path('gst_details',views.gst_details,name='gst_details'),
     path('tds_detuctor',views.tds_detuctor,name='tds_detuctor'),
 

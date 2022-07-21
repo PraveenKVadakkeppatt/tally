@@ -54,6 +54,15 @@ def list_of_currency(request):
 def list_of_companies(request):
     return render(request,'list_of_companies.html')
 
+def select_company(request):
+    return render(request,'select_company.html')
+
+def shut_company(request):
+    return render(request,'shut_company.html')
+
+def shut_card(request):
+    return render(request,'shut_card.html')
+
 def load_create_ledger(request):
     return render(request,'load_create_ledger.html')
 
@@ -84,6 +93,9 @@ def create_currency(request):
 
 def load_alter_currency(request):
     return render(request,'load_alter_currency.html')
+
+def currency_alteraion(request):
+    return render(request,'currency_alteraion.html')
 
 def gst_details(request):
     return render(request,'gst_details.html')
