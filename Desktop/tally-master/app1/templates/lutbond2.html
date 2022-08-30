@@ -1,0 +1,454 @@
+{% extends 'base.html' %}
+    {% block body %}
+    {% load static %}
+    <style>
+        .enter{
+            display: flex;
+            align-items: center;
+            justify-content: center;   
+        }
+    </style>
+    <div class="m-0">
+        <h6  class="bg-info text-light p-2 m-0 text-center">Company Creation</h6>
+        <form class="p-3" style="background-color:rgba(0,0,0,.4);" method="post" action="{% url 'company_create' %}" autocomplete="off">
+            {% csrf_token %}
+            <div class="row container-fluid  p-0 m-0" >
+                <div class="col-sm-6 m-0 p-4">
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d"></label>Company Data Path</div>
+                        <div class="col-sm-6 m-0 p-0"><input type="text" class="form-control" value="C:\Users\Public\TallyPrime\data"></div>
+                    </div>
+                </div>
+            </div> 
+            <div class="row container-fluid  p-0 m-0" style=" border: 1px solid rgba(128, 128, 128, 0.6);">
+                <div class="col-sm-6 m-0 p-4" style=" border-right: 1px solid rgba(128, 128, 128, 0.6);">
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d">Company Name</label></div>
+                        <div class="col-sm-6 m-0 p-0"><input type="text" class="form-control" id="companyname" name="companyname" ></div>
+                    </div><br>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d">Mailing Name</label></div>
+                        <div class="col-sm-6 m-0 p-0">
+                            <input type="text" class="form-control" id="mailing_name" name="mailing_name" onclick="copyName()">
+                        </div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d">Address</label></div>
+                        <div class="col-sm-6 m-0 p-0"><textarea class="form-control" name="address" id="" cols="36" rows="4"></textarea></div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="c">State</label></div>
+                        <div class="col-sm-6 m-0 p-0">
+                            <select name="state" id="" class="form-control">
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                <option value="Daman and Diu">Daman and Diu</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Lakshadweep">Lakshadweep</option>
+                                <option value="Puducherry">Puducherry</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala" selected>Kerala</option> 
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Odisha">Odisha</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="West Bengal">West Bengal</option>    
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row container-fluid p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="c">Country</label></div>
+                        <div class="col-sm-6 m-0 p-0">
+                            <select class="form-control" name="country" id="countryId" onchange="currency1()">
+                                <option value="">Not Applicable</option>
+                                <option value="Bhutan">Bhutan</option> 
+                                <option value="Egypt">Egypt</option>
+                                <option value="Germany">Germany</option>
+                                <option value="India">India</option> 
+                                <option value="Afghanistan">Afghanistan</option> 
+                                <option value="Belgium">Belgium</option> 
+                                <option value="Canada">Canada</option> 
+                                <option value="France">France</option> 
+                                <option value="Indonesia">Indonesia</option> 
+                                <option value="Bangladesh">Bangladesh</option> 
+                                <option value="Australia">Australia</option> 
+                                <option value="Chile">Chile</option> 
+                                <option value="Colombia">Colombia</option> 
+                                <option value="Cuba">Cuba</option> 
+                                <option value="China">China</option> 
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d">Pin Code</label></div>
+                        <div class="col-sm-6 m-0 p-0"><input type="text" name="pincode" class="form-control" maxlength="6"
+                            pattern="^[1-9][0-9]{5}$" title="Please enter valid pincode"></div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d">Telephone</label></div>
+                        <div class="col-sm-6 m-0 p-0"><input type="text" name="telephone" class="form-control" id="d" placeholder=""
+                            maxlength="8" pattern="[0-9]{3}[0-9]{2}[0-9]{3}">
+                        </div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d">Mobile</label></div>
+                        <div class="col-sm-6 m-0 p-0"><input type="text" name="mobile" class="form-control" id="d" placeholder=""
+                            maxlength="10" pattern="[6-9]{1}[0-9]{9}" title="Please enter valid phone number">
+                        </div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d">Fax</label></div>
+                        <div class="col-sm-6 m-0 p-0"><input type="text" name="fax" class="form-control"
+                            pattern="^\+?[0-9]{3,}$"></div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d">E-Mail</label></div>
+                        <div class="col-sm-6 m-0 p-0"><input type="email" name="email" class="form-control" id="d" placeholder=""></div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d">Website</label></div>
+                        <div class="col-sm-6 m-0 p-0"><input type="url" name="website" class="form-control" id="d" placeholder=""></div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 m-0 p-4" style=" border-right: 1px solid rgba(128, 128, 128, 0.6);">
+                    <div class="row container-fluid  p-0">
+                        <div class="col-sm-6 m-0 p-0"></div>
+                        <div class="col-sm-6 m-0 p-0"></div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d">Financial Year Beginning From</label></div>
+                        <div class="col-sm-6 m-0 p-0"><input type="date" value="2022-04-01" name="fyear" data-date-format="DD/MM/YYYY" class="form-control"></div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d">Book Beginning From</label></div>
+                        <div class="col-sm-6 m-0 p-0"><input type="date" value="2022-04-01" name="byear" data-date-format="DD/MM/YYYY" class="form-control"></div>
+                    </div>
+                </div>
+            </div> 
+            <div class="row container-fluid  p-0 m-0" style=" border: 1px solid rgba(128, 128, 128, 0.6);">
+                <div class="col-sm-6 m-0 p-4">
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d"></label>Base Currency Symbol</div>
+                        <div class="col-sm-6 m-0 p-0"><input type="text" name="currency" class="form-control" id="cur" placeholder=""></div>
+                    </div>
+                    <div class="row container-fluid  p-2">
+                        <div class="col-sm-6 m-0 p-0"> <label for="d"></label>Formal Name</div>
+                        <div class="col-sm-6 m-0 p-0"><input type="text" name="formal" class="form-control" id="formal" placeholder=""></div>
+                    </div>
+                </div>
+                <div class="col-sm-4 m-0 p-4"></div>
+            </div>
+            <div class="enter w-100 py-4"><button class="btn btn-info w-15">CREATE</button></div>       
+        </form>
+    </div>  
+    
+    <script>
+        function passvalue(){
+            var status = document.getElementById('companyname').value;
+            console.log(status);
+
+            localStorage.setItem("status",status);
+            var a = localStorage.getItem('status');
+            console.log(a);
+        }
+
+        function copyName(){
+            document.getElementById("mailing_name").value = document.getElementById("companyname").value;
+        }
+       
+        function currency1(){
+            var val=document.getElementById("countryId").value;
+            if(val=="India")
+            {
+                newval="₹";
+                Formal="INR";
+            }
+            else if(val=="Afghanistan")
+            {
+                newval="AFN";
+                Formal="Afghani";
+            }
+            else if(val=="Albania")
+            {
+                newval="Lek";
+                Formal="ALL";
+            }
+            else if(val=="Algeria")
+            {
+                newval="DSD";
+                Formal="Algerian Dinar";
+            }
+            else if(val=="Andorra")
+            {
+                newval="Nu";
+                Formal="Bhutanese Ngultrum";
+            }
+            else if(val=="Angola")
+            {
+                newval="Kz";
+                Formal="Angolan Kwanza";
+            }
+            else if(val=="Argentina")
+            {
+                newval="$";
+                Formal="Argentine Peso";
+            }
+            else if(val=="Australia")
+            {
+                newval="$";
+                Formal="Australian Dollar";
+            }
+            else if(val=="Bangladesh")
+            {
+                newval="TK";
+                Formal="Bangladeshi Taka";
+            }
+            else if(val=="Belgium")
+            {
+                newval="€";
+                Formal="European Euro";
+            }
+            else if(val=="Benin")
+            {
+                newval="franc";
+                Formal="West African CFA";
+            }
+            else if(val=="Bhutan")
+            {
+                newval="Nu";
+                Formal="Bhutanese Ngultrum";
+            }
+            else if(val=="Botswana")
+            {
+                newval="P";
+                Formal="Botswana Pula";
+            }
+            else if(val=="Brazil")
+            {
+                newval="R$";
+                Formal="Brazilian Real";
+            }
+            else if(val=="Burkina Faso")
+            {
+                newval="franc";
+                Formal="West African CFA";
+            }
+            else if(val=="Burundi")
+            {
+                newval="Fbu";
+                Formal="Burundian Franc";
+            }
+            else if(val=="Cambodia")
+            {
+                newval="KHR";
+                Formal="Combodian Riel";
+            }
+            else if(val=="Cameroon")
+            {
+                newval="franc";
+                Formal="Central African CFA";
+            }
+            else if(val=="Canada")
+            {
+                newval="$";
+                Formal="Canadian Dollar";
+            }
+            else if(val=="Chad")
+            {
+                newval="franc";
+                Formal="Central African CFA";
+            }
+            else if(val=="Chile")
+            {
+                newval="$";
+                Formal="Peso";
+            }
+            else if(val=="China")
+            {
+                newval="¥";
+                Formal="Yuan Renminbi";
+            }
+            else if(val=="Colombia")
+            {
+                newval="$";
+                Formal="Peso";
+            }
+            else if(val=="Cuba")
+            {
+                newval="CUP";
+                Formal="Peso";
+            }
+            else if(val=="Czech Republic")
+            {
+                newval="CZK";
+                Formal="Koruna";
+            }
+            else if(val=="Dominican Republic")
+            {
+                newval="RD$";
+                Formal="Peso";
+            }
+            else if(val=="Ecuador")
+            {
+                newval="S";
+                Formal="Ecuadorian sucre";
+            }
+            else if(val=="Dominican Republic")
+            {
+                newval="RD$";
+                Formal="Peso";
+            }
+            else if(val=="Egypt")
+            {
+                newval="EGP";
+                Formal="Egyptian Pound";
+            }
+            else if(val=="Dominican Republic")
+            {
+                newval="RD$";
+                Formal="Peso";
+            }
+            else if(val=="Ethiopia")
+            {
+                newval="ETB";
+                Formal="Ethiopian birr";
+            }
+            else if(val=="France")
+            {
+                newval="€";
+                Formal="European Euro";
+            }
+            else if(val=="Germany")
+            {
+                newval="€";
+                Formal="European Euro";
+            }
+            else if(val=="Ghana")
+            {
+                newval="GH¢";
+                Formal="Ghanaian Cedi";
+            }
+            else if(val=="Ghana")
+            {
+                newval="GH¢";
+                Formal="Ghanaian Cedi";
+            }
+            else if(val=="Greece")
+            {
+                newval="€";
+                Formal="European Euro";
+            }
+            else if(val=="Guatemala")
+            {
+                newval="Q";
+                Formal="Quetzal";
+            }
+            else if(val=="Guinea")
+            {
+                newval="FCFA";
+                Formal="Central African CFA franc";
+            }
+            else if(val=="Haiti")
+            {
+                newval="HTG";
+                Formal="Haitian Gourde";
+            }
+            else if(val=="Hong Kong")
+            {
+                newval="HKD";
+                Formal="Hong Kong Dollar";
+            }
+            else if(val=="Indonesia")
+            {
+                newval="Rp";
+                Formal="Indonesian Rupiah";
+            }
+            else if(val=="Iran")
+            {
+                newval="IRR";
+                Formal="Rial";
+            }
+            else if(val=="Iraq")
+            {
+                newval="IQD";
+                Formal="Iraqi Dinar";
+            }
+            else if(val=="Italy")
+            {
+                newval="€";
+                Formal="European Euro";
+            }
+            else if(val=="Japan")
+            {
+                newval="¥";
+                Formal="Yen";
+            }
+            else if(val=="Kazakhstan")
+            {
+                newval="KZT";
+                Formal="Tenge";
+            }
+            else if(val=="Kenya")
+            {
+                newval="KSh";
+                Formal="Kenyan Shilling";
+            }
+            else if(val=="Kuwait")
+            {
+                newval="KWD";
+                Formal="Kuwaiti Dinar";
+            }
+            else if(val=="Liberia")
+            {
+                newval="$";
+                Formal="Dollar";
+            }
+            else if(val=="Madagascar")
+            {
+                newval="MGA";
+                Formal="Malagasy Ariary";
+            }
+            else if(val=="Malawi")
+            {
+                newval="MWK";
+                Formal="Malawian Kwacha";
+            }
+            else if(val=="Malaysia")
+            {
+                newval="RM";
+                Formal="Ringgit Malaysia";
+            }
+            else
+            {
+                newval="";
+                Formal="";
+            }
+            document.getElementById("cur").value = newval;
+            document.getElementById("formal").value = Formal;
+        }
+    </script>
+{% endblock %}

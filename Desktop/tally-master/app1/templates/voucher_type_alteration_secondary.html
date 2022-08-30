@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<style>
+    .flexy{
+        margin-left: 550px;
+    }
+</style>
+
+
+<div class="m-3">
+    <a href="javascript:history.go(-1);" class="close">+</a>
+<h6 class="bg-info text-light p-2 m-0 " style="text-align: center;">Voucher Type Alteration (Secondary)</h6>
+        <form  style="background-color:rgba(0,0,0,.4);" method="post" action="">
+            {% csrf_token %}
+            
+            <div class="row container-fluid p-0 m-0" >
+
+                <div class="col-sm-6 m-0 p-4">
+                    
+                    <div class="row container-fluid  p-2 m-0">
+                        <div class="col-sm-6 m-0 p-0"> <label for="" >Starting Number</label></div>
+                        <div class="col-sm-4 m-0 p-0"><input required type="number" class="form-control" id="" placeholder="" name="acsymbol"></div>
+                    </div>
+
+                    <div class="row container-fluid  p-2 m-0">
+                        <div class="col-sm-6 m-0 p-0"> <label for="" >width Of Neumerical Part</label></div>
+                        <div class="col-sm-4 m-0 p-0"><input required type="number" class="form-control" id=""  placeholder="" name="acfname"></div>
+                    </div>
+
+                    
+
+                    <div class="row container-fluid  p-2 m-0">
+                        <div class="col-sm-6 m-0 p-0"> <label for="" >Prefill With Zero</label></div>
+                        <div class="col-sm-4 m-0 p-0"><select name="sufixamnt" id="" class="form-control">
+                            <option value="No">NO</option>
+                            <option value="Yes">YES</option>
+                        </select></div>
+                    </div>
+
+                   
+        
+                            
+                        </select></div>
+                        
+                            
+                        
+
+            
+
+            <div style="overflow: scroll ;max-height: 70vh; width: 100%;background-color:rgba(0,0,0,0.4); ">
+                <Table class="w-100 table text-center" border="1">
+                    <tr>
+                        
+                        <th colspan="3">Restart Numbering</th>
+                        <th colspan="2">prefix Details</th>
+                        <th colspan="2">Suffix Details</th>
+        
+                    </tr>
+                    <tr><th>Applicable<br>Form</th>
+                        <th>Starting<br> Number</th>
+                        <th>Particulars</th>
+
+                        <th>Applicable<br>Form</th>
+                        <th>Particulars</th>
+                        <th>Applicable<br>Form</th>
+                        <th>Particulars</th>
+        
+                    </tr>
+                    <tr>
+                        <form action="save_currency_data" method="post">
+                            {% csrf_token %}
+                      
+        
+        
+                      </select></td>
+                      
+                      <td> <input type="date" class="w-100 from-control" name=""></td>
+                      <td> <input type="number" class="w-100 from-control" name=""></td>
+                      <td> <select name="" id="" class="form-control">
+                        <option value="No">Daily</option>
+                        <option value="Yes">Monthly</option>
+                        <option value="No">Never</option>
+                        <option value="Yes">Weekly</option>
+                        <option value="No">Yearly</option></select></td>
+                            
+                      <td> <input type="date" class="w-100 from-control" name=""></td>
+                      <td> </td>
+                      <td> <input type="date" class="w-100 from-control" name=""></td>
+                      <td> </td>
+
+                      
+
+                      <!-- <td> <button class="btn btn-info">Enter</button></td>  -->
+                      
+                    </form>
+                    </tr>
+                    
+                    
+                    
+                </Table>
+                
+            </div>
+            <div class="flexy">
+                <button type="submit" style="text-align: center;" class="btn btn-info w-20 my-2 " >Create</button>
+            </div>
+        </div> 
+        
+       
+    
+                
+
+                
+
+            
+            
+        </div>
+                    
+
+                   
+                    
+                
+
+
+
+{% endblock %}

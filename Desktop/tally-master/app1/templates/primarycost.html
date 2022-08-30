@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block body %}
+    {% load static %}
+
+
+
+    
+                </style>
+        
+        <div class="row container-fluid p-0 mx-0">
+            <div class="col-sm-3 m-0 p-0"></div>
+            <div class="col-sm-6 m-0 p-0" style=" background-color:rgba(0,0,0,0.2);">
+                <a href="javascript:history.go(-1);" class="close">+</a>
+            <h6 class="bg-info text-light p-2">Cost Center Alteration</h6>
+            
+        
+        <form id="myForm" action="{% url 'create_group' %}" method="post" class="p-5">
+            {% csrf_token %}
+           
+                            <div class="row container-fluid  p-2 m-0">
+                                <div class="col-sm-6 m-0 p-0"> <label for="gname">Name :</label></div>
+                                <div class="col-sm-6 m-0 p-0"><input type="text" id="gname"  name="gname" class="form-control" placeholder="" required></div> 
+                            </div>
+        
+                            <div class="row container-fluid  p-2 m-0">
+                                <div class="col-sm-6 m-0 p-0"> <label for="alia">(Alias) :</label></div>
+                                <div class="col-sm-6 m-0 p-0"><input type="text" id="alia" name="alia"class="form-control" placeholder=""></div> 
+                            </div>
+        
+                            <div class="row container-fluid  p-2 m-0">
+                                <div class="col-sm-6 m-0 p-0"> <label for="under">Under :</label></div>
+                                <div class="col-sm-6 m-0 p-0">
+                                    <select id="under" name="und" class="form-control " required onchange="showunder()">
+                                        <option value="">----Select-----</option>
+                                        <option value="Primary">Primary*</option>
+        
+        
+                        
+                    
+                </div>
+                </form>
+                </div>
+                </div>
+                </body>
+
+                {% endblock %}
+        

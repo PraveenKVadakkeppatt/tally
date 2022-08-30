@@ -1,0 +1,58 @@
+def create_voucher(request):
+	if request.method=='POST':
+		nm=request.POST['vname']
+		als=request.POST['alias']
+		vtp=request.POST['vouch_type']
+		abbr=request.POST['Abbreviation']
+		actp=request.POST['activate_Vtype']
+		mvno=request.POST['method_Vno']
+		prnt=request.POST['prevent']
+		acn=request.POST['advance_con']
+		use=request.POST['use_EDV']
+		zero=request.POST['zero_val']
+		mvd=request.POST['mVoptional_defualt']
+		anar=request.POST['allow_nar']
+		prvdl=request.POST['provide_L']
+		jrnl=request.POST['manu_jrnl']
+		track=request.POST['track_purchase']
+		enbl=request.POST['enable_acc']
+		prntva=request.POST['prnt_VA_save']
+		prntfml=request.POST['prnt_frml']
+		juri=request.POST['jurisdiction']
+		tprint=request.POST['title_print']
+		setaltr=request.POST['set_alter']
+		posinv=request.POST['pos_invoice']
+		msg1=request.POST['msg_1']
+		msg2=request.POST['msg_2']
+		dbank=request.POST['default_bank']
+		nc=request.POST['name_class']
+
+		vhr=Voucher(voucher_name=nm,
+                    alias = als,
+                    voucher_type = vtp,
+                    abbreviation = abbr,
+                    voucherActivate = actp,
+                    voucherNumber = mvno,
+                    preventDuplicate = prnt,
+                    advance_con = acn,
+                    voucherEffective = use,
+                    transaction = zero,
+                    make_optional = mvd,
+                    voucherNarration = anar,
+                    provideNarration = prvdl,
+                    manu_jrnl = jrnl,
+                    track_purchase = track,
+                    enable_acc = enbl,
+                    prnt_VA_save = prntva,
+                    <!-- prnt_frml = prntfml, -->
+                    jurisdiction = juri,
+                    title_print = tprint,
+                    set_alter = setaltr,
+                    pos_invoice = posinv,
+                    msg_1 = msg1,
+                    msg_2 = msg2,
+                    default_bank = dbank,
+                    name_class = nc)          
+		vhr.save()
+		print("Added")
+		return redirect('/')
