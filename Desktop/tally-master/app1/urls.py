@@ -85,6 +85,12 @@ urlpatterns = [
     path('add_units',views.add_units,name='add_units'),
     path('attendence',views.attendence,name='attendence'),
     path('emp_attendence',views.emp_attendence,name='emp_attendence'),
+    path('payheads',views.payheads,name='payheads'),
+    path('add_pay_head',views.add_payhead,name='add_payhead'),
+    path('payvoucher',views.payvoucher,name='payvoucher'),
+    path('employe_category',views.employe_category,name='employe_category'),
+    path('employe_category_form',views.employe_category_form,name='employe_category_form'),
+
 #secondary
     path('empgroup2',views.emp_grp2,name='emp_grp2'),
     path('addemp_grp2',views.addemp_group2,name='addemp_group2'),

@@ -300,13 +300,18 @@ class gst_lutbond(models.Model):
     
     
    #payroll
-
+class emp_category(models.Model):
+    cat_name= models.CharField(max_length=225)
+    cat_alias= models.CharField(max_length=225)
+    revenue_items=models.CharField(max_length=225)
+    non_revenue_items=models.CharField(max_length=225)
 
 class Create_employeegroup(models.Model):
     name =models.CharField(max_length=225)
     alias=models.CharField(max_length=225)
     under=models.CharField(max_length=225)
     define_salary=models.CharField(max_length=225) 
+    cat_name=models.ForeignKey(emp_category,on_delete=models.CASCADE,blank=True,null=True)
 
 class Employee(models.Model):
 
@@ -424,4 +429,19 @@ class Create_attendence(models.Model):
     period=models.CharField(max_length=225,default='null',blank=True)
     units=models.CharField(max_length=225,default='null',blank=True)   
     
-   
+class create_VoucherModels(models.Model):
+    voucher_name = models.CharField(max_length=225)
+    alias = models.CharField(max_length=225)
+    voucher_type = models.CharField(max_length=225)
+    abbreviation = models.CharField(max_length=225)
+    active_this_voucher_type =  models.CharField(max_length=225)
+    method_voucher_numbering = models.CharField(max_length=225)
+    use_adv_conf = models.CharField(max_length=225,blank=True)
+    prvnt_duplictes = models.CharField(max_length=225,default="Null",blank=True)
+    use_effective_date =  models.CharField(max_length=225,default="Null")
+    allow_zero_value_trns =  models.CharField(max_length=225)
+    allow_naration_in_voucher =  models.CharField(max_length=225)
+    make_optional =  models.CharField(max_length=225)
+    provide_naration =  models.CharField(max_length=225)
+    print_voucher = models.CharField(max_length=225)
+  

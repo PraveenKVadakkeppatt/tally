@@ -30,12 +30,12 @@
     <div class="col-sm-3 m-0 p-0"></div>
     <div class="col-sm-6 m-0 p-0" style=" background-color:rgba(0,0,0,0.2);">
         <a href="javascript:history.go(-1);" class="close">+</a>
-    <h6  class="bg-info text-light p-2">Employee Group Creation</h6>
+    <h6  class="bg-info text-light p-2">Employee Category Creation</h6>
 
     
     
 
-<form  action="{% url 'addemp_group' %}" method="post" class="p-5">
+<form  action="{% url 'employe_category_form' %}" method="post" class="p-5">
         {% csrf_token %}
    
                     <div class="row container-fluid  p-2 m-0">
@@ -58,18 +58,21 @@
                     </div>
 
                     <div class="row container-fluid  p-2 m-0">
-                        <div class="col-sm-4 m-0 p-0"> <label for="under">Under :</label></div>
+                        <div class="col-sm-4 m-0 p-0"> <label >Allocate Revenue Items :</label></div>
                         <div class="col-sm-8 m-0 p-0">
-                            <input name="under" onclick="clicked()" id="under" class="form-control " style="width: 100%;">
-                               
+                            <select name="locate" class="form-control " style="width: 100%;">
+                                <option  value="No">No</option>
+                                <option  value="Yes">yes</option>
+                        
+                            </select>
+                            
                         </div> 
                     </div>
 
-
                     <div class="row container-fluid  p-2 m-0">
-                        <div class="col-sm-4 m-0 p-0"> <label >Define salary details :</label></div>
+                        <div class="col-sm-4 m-0 p-0"> <label >Allocate Non-revenue Items :</label></div>
                         <div class="col-sm-8 m-0 p-0">
-                            <select name="sal" class="form-control "  style="width: 100%;">
+                            <select name="locate2" class="form-control " style="width: 100%;">
                                 <option  value="No">No</option>
                                 <option  value="Yes">yes</option>
                         
@@ -99,8 +102,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title text-center custom-select-md for">
-                        <h7>List of Employee Groups</h7><hr/>
-                        <a href="{% url 'emp_grp2' %}" class="btn btn-info ">Create</a>
+                        <h7 class="font-weight-bold">List of Employee Groups</h7><hr/>
     
                     </div>
                     <ul class="list-group ">
@@ -109,11 +111,7 @@
                         {% for k in std %}
                         <li class="list-item ps" onclick="hidelist('{{k.name}}')" value="{{k.id}}">{{k.name}}  </li>
                         {% endfor %}
-                        
-                        {% for i in empc %}
-                        <li class="list-item ps" onclick="hidelist('{{i.cat_name}}')" value="{{i.id}}">{{i.cat_name}}  </li>
-                        {% endfor %}
-
+                       
                       </ul>
                      
                     
