@@ -828,6 +828,29 @@ def ledger_cheque_dimenssion(request):
 
 # payroll masters
 
+def employe_category(request):
+    return render(request,'employe_category.html')   
+
+def employe_category_secondary(request):
+    return render(request,'employe_category_secondary.html')   
+
+def employe_category_form(request):
+    if request.method == 'POST':
+        name= request.POST['name']
+        alias = request.POST['alias']
+        relocate = request.POST['locate']
+        relocate= request.POST['locate2']
+
+        std= emp_category(
+            cat_name =name,
+            cat_alias=alias,
+            revenue_items=relocate,
+            non_revenue_items=relocate,   
+        )
+        std.save()
+       # messages.success(request,'employee group add successfully !!!')
+        return redirect('emp_grp')
+
 def emp_grp(request):
     std=Create_employeegroup.objects.all()
     return render(request,'employegroup.html',{'std':std})
@@ -1274,6 +1297,9 @@ def add_voucher(request):
 
 def employe_category(request):
     return render(request,'employe_category.html')   
+
+def employe_category_secondary(request):
+    return render(request,'employe_category_secondary.html')   
 
 def employe_category_form(request):
     if request.method == 'POST':

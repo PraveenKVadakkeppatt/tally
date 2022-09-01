@@ -90,10 +90,10 @@ urlpatterns = [
     path('payvoucher',views.payvoucher,name='payvoucher'),
     path('employe_category',views.employe_category,name='employe_category'),
     path('employe_category_form',views.employe_category_form,name='employe_category_form'),
-
+    path('add_voucher',views.add_voucher,name='add_voucher'),
 #secondary
     path('empgroup2',views.emp_grp2,name='emp_grp2'),
     path('addemp_grp2',views.addemp_group2,name='addemp_group2'),
     path('attendence2',views.attendence2,name='attendence2'),
-    
+    path('employe_category_secondary',views.employe_category_secondary,name='employe_category_secondary'),
 ]

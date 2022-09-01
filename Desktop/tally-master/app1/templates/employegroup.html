@@ -40,8 +40,8 @@
    
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4 m-0 p-0"> <label for="gname">Name :</label></div>
-                        <div class="col-sm-8 m-0 p-0"><input class="custom-select-md form-control" type="text" name="name"
-                            style="width: 100%;" id="alias" 
+                        <div class="col-sm-8 m-0 p-0"><input class="custom-select-md form-control" onclick="clicked1()" type="text" name="name"
+                            style="width: 100%;" id="name" 
                             placeholder="" autocomplete="off"/></div> 
 
                             
@@ -110,8 +110,8 @@
                         <li class="list-item ps" onclick="hidelist('{{k.name}}')" value="{{k.id}}">{{k.name}}  </li>
                         {% endfor %}
                         
-                        {% for i in empc %}
-                        <li class="list-item ps" onclick="hidelist('{{i.cat_name}}')" value="{{i.id}}">{{i.cat_name}}  </li>
+                        {% for e in empc %}
+                        <li class="list-item ps" onclick="hidelist('{{e.cat_name}}')" value="{{e.id}}">{{e.cat_name}}  </li>
                         {% endfor %}
 
                       </ul>
@@ -120,9 +120,36 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div></div></div>
 
+    <div class="col-sm-3  " style="margin-top:-350px" >
+        <div class="hide" id="glist1">
+            <div class="col-sm-8 m-0 p-0">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title text-center custom-select-md for">
+                            <h7>List of Employee Groups</h7><hr/>
+                            <a href="{% url 'employe_category_secondary' %}" class="btn btn-info ">Create</a>
+        
+                        </div>
+                        <ul class="list-group ">
+                            <li class="list-item ps" onclick="hidelist1('primary')" value="End of list">primary</li>
+            
+                            
+                            
+                            {% for e in empc %}
+                            <li class="list-item ps" onclick="hidelist1('{{e.cat_name}}')" value="{{e.id}}">{{e.cat_name}}  </li>
+                            {% endfor %}
+    
+                          </ul>
+                         
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
 
+    
 
 
 </div>
@@ -148,6 +175,18 @@
       document.getElementById('glist').style.display="flex";
       
     }
+
+    function hidelist1(valueDIv1) {
+      document.getElementById("name").value=valueDIv1;
+      document.getElementById("glist1").style.display="none";
+    }
+
+    function clicked1() {
+
+      document.getElementById('glist1').style.display="flex";
+
+}
+
 
     function checker(){
         var a=confirm("Are you sure")
