@@ -311,7 +311,6 @@ class Create_employeegroup(models.Model):
     alias=models.CharField(max_length=225)
     under=models.CharField(max_length=225)
     define_salary=models.CharField(max_length=225) 
-    cat_name=models.ForeignKey(emp_category,on_delete=models.CASCADE,blank=True,null=True)
 
 class Employee(models.Model):
 

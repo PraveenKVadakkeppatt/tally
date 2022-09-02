@@ -27,7 +27,7 @@
                         <div class="row container-fluid  p-2 m-0">
                             <div class="col-sm-4 m-0 p-0"> <label for="b">Alias</label></div>
                             <div class="col-sm-8 m-0 p-0"> 
-                            <input type="text" class="form-control" id="b" placeholder="" name="alias"></div>
+                            <input type="text" class="form-control" id="bd" oninput="shw2()" placeholder="" name="alias"></div>
                         </div>
 
 
@@ -541,6 +541,13 @@
         var a=status.value
         console.log(a);
         document.getElementById('vc').value =a;
+     }
+
+     function shw2(){
+        var status =document.getElementById('bd')
+        var a=status.value
+        console.log(a);
+        document.getElementById('pk').value =a;
      }
 
      function attendence(){

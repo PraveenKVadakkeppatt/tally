@@ -853,7 +853,9 @@ def employe_category_form(request):
 
 def emp_grp(request):
     std=Create_employeegroup.objects.all()
-    return render(request,'employegroup.html',{'std':std})
+    empc=emp_category.objects.all()
+
+    return render(request,'employegroup.html',{'std':std,'empc':empc})
 
 
 def addemp_group(request):
@@ -873,7 +875,7 @@ def addemp_group(request):
         std.save()
        # messages.success(request,'employee group add successfully !!!')
         return redirect('emp_grp')
-    return render(request,'employegroup.html',{'empc':empc})
+    return render(request,'employegroup.html')
 
 
 def emp_grp2(request):
