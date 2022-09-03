@@ -52,12 +52,12 @@
             {% csrf_token %}
 
                 <label  class="form-label">Name</label>
-                <input name="name" id="nm" type="text" onblur="passvalue()" class="form-control">
+                <input name="name" id="nm" type="text" onblur="passvalue()" class="form-control" required>
                 
                 <label  class="form-label">alias</label>
                 <input name="alias" type="text" class="form-control">
                 <label class="form-label">Under</label>
-                <input name="under" onblur="pass()" onclick="showList()" id="un" class="form-control">
+                <input name="under" onblur="passvalue1()" & onclick="showList()" id="un" class="form-control">
                     
                 <label class="form-label">date of joining</label>
                 <input name="join" type="date" class="form-control">
@@ -312,13 +312,13 @@
         console.log(a);
     }
 
-    function pass(){
+    function passvalue1(){
         var under =document.getElementById('un').value;
         console.log(under)
          
         localStorage.setItem('under',under);
         var b=localStorage.getItem('under');
-        console.log(b);
+        console.log(a);
         
     }
     // document.getElementById('nm').value=localStorage.getItem("static");

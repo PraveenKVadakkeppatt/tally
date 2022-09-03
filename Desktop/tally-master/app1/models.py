@@ -415,6 +415,7 @@ class units(models.Model):
     type= models.CharField(max_length=225)
     symbol=models.CharField(max_length=225)
     formal_name=models.CharField(max_length=225)
+    uqc1=models.CharField(max_length=225,default='null',blank=True)
     number_of_decimal_places=models.CharField(max_length=225)
     first_unit=models.CharField(max_length=225)
     conversion=models.CharField(max_length=225)
@@ -443,4 +444,8 @@ class create_VoucherModels(models.Model):
     make_optional =  models.CharField(max_length=225)
     provide_naration =  models.CharField(max_length=225)
     print_voucher = models.CharField(max_length=225)
+
+class uqc(models.Model):
+    new_uqc=models.CharField(max_length=225)
+
   

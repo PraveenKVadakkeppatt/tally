@@ -885,7 +885,15 @@ def emp_grp2(request):
 
 def employee(request):
     std=Create_employeegroup.objects.all()
-    return render(request,'employe.html',{'std':std})   
+    return render(request,'employe.html',{'std':std})  
+
+def uqcform(request):
+    if request.method=='POST':
+        uqname= request.POST['uqcname']
+        u=uqc(new_uqc=uqname,)
+        u.save()
+        return redirect('stunits')
+    return render(request,'uqcform.html')   
 
 
 def addemployee(request):
@@ -1124,7 +1132,8 @@ def payhead2(request):
 
 def stunits(request):
     ps=units()
-    return render(request,'stunits.html',{'ps':ps}) 
+    uq=uqc.objects.all()
+    return render(request,'stunits.html',{'ps':ps,'uq':uq}) 
 
 def add_units(request):
     if request.method=='POST':
@@ -1132,6 +1141,7 @@ def add_units(request):
         std.type=request.POST.get('type')
         std.symbol=request.POST.get('symbol')  
         std.formal_name=request.POST.get('formal')
+        std.uqc1=request.POST.get('uqc1')
         std.number_of_decimal_places=request.POST.get('decimal') 
         std.first_unit=request.POST.get('ft')
         std.conversion=request.POST.get('con')

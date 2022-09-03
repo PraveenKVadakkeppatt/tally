@@ -39,8 +39,10 @@
     .hide{
         display: none;
     }
+    
+    
 </style>
-
+    <div class="m-3">
    <div class="row container-fluid  p-0 my-5">
     <div class="col-sm-3  m-0 p-0"></div>
     <div class="col-sm-6 m-0 p-0" style=" background-color:rgba(0,0,0,0.2);">
@@ -80,7 +82,7 @@
                 <div id="uqc1" class="row container-fluid hide   p-2 m-0">
                     <div class="col-sm-6 m-0 p-0"> <label for="uqc">Unity Quantity Code (UQC)</label></div>
                     <div class="col-sm-6 m-0 p-0"> 
-                    <input type="text" name="" class="form-control" onclick="clicked()"  placeholder="" id="uqc"></div>
+                    <input type="text" name="uqc1" class="form-control" onclick="clicked()"  placeholder="" id="uqc"></div>
                     
                 </div>
 
@@ -89,7 +91,7 @@
                 <div id="num" class="row container-fluid  hide  p-2 m-0">
                     <div class="col-sm-6 m-0 p-0"> <label for="dcml">Number of decimal places</label></div>
                     <div class="col-sm-6 m-0 p-0"> 
-                    <input type="text" name="decimal" class="form-control" id="dcml" placeholder="" value="0"></div>
+                    <input type="text" name="decimal"  class="form-control" id="dcml" placeholder="" value="0"></div>
                     
                 </div>
 
@@ -97,7 +99,7 @@
                 <div id="ft" class="row container-fluid hide   p-2 m-0">
                     <div class="col-sm-6 m-0 p-0"> <label for="dcml">First unit</label></div>
                     <div class="col-sm-6 m-0 p-0"> 
-                    <input name="ft" type="text" class="form-control"  placeholder="" ></div>
+                    <input name="ft" type="text" onclick="clicked1()" id="ft" class="form-control"  placeholder="" ></div>
                     
                 </div>
 
@@ -118,18 +120,18 @@
 
             </div>
             <div class="flexy w-100 py-4"><button class="btn btn-info w-25 " onclick="checker()">Create</button></div> 
-
+        </div>
             </form>
     </div>
    
             <div class="col-sm-3 m-0 p-2 pt-5  " >
                 <div class="hide" id="glist">
                     <div class="col-sm-8 m-0 p-0">
-                        <div class="card">
+                        <div class="card" style="background-color: #000; margin-top: -450px; margin-left: auto;">
                             <div class="card-body">
                                 <div class="card-title text-center custom-select-md for">
-                                    <h7>List of Employee Groups</h7><hr/>
-                                    <a href="{% url 'emp_grp2' %}" class="btn btn-info ">Create</a>
+                                    <h7>List of UQCs</h7><hr/>
+                                    <a href="{% url 'uqcform' %}" class="btn btn-info ">Create</a>
                 
                                 </div>
                                 <ul class="list-group ">
@@ -176,14 +178,44 @@
                                     <li class="list-item ps" onclick="hidelist('UNIT-UNITS')" value="End of list">UNIT-UNITS</li>
                                     <li class="list-item ps" onclick="hidelist('YDS-YARDS')" value="End of list">YDS-YARDS</li>
                                     
+
+                                    {% for k in uq %}
+                                    <li class="list-item ps" onclick="hidelist('{{k.new_uqc}}')" value="{{k.id}}">{{k.new_uqc}}  </li>
+                                    {% endfor %}
                                 </ul>
                                  
-                            
                             </div>
                         </div>
                     </div>
                 </div>
-     
+            </div>
+                            
+                <div class="col-sm-3  " style="margin-top:-350px" >
+                    <div class="hide" id="glist1">
+                        <div class="col-sm-8 m-0 p-0">
+                            <div class="card" style="background-color: #000;">
+                                <div class="card-body">
+                                    <div class="card-title text-center custom-select-md for">
+                                        <h7>List of Employee Categories</h7><hr/>
+                                        <a href="{% url 'employe_category_secondary' %}" class="btn btn-info ">Create</a>
+                    
+                                    </div>
+                                    <ul class="list-group ">
+                        
+                                        
+                                        
+                                        {% for i in std %}
+                                    <li class="list-item ps" onclick="hidelist('{{i.formal_name}}')" value="{{i.id}}">{{i.formal_name}}  </li>
+                                    {% endfor %}
+                
+                                      </ul>
+                                     
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
     </div>
     </div>
     <div class="col-sm-3  m-0 p-0"></div>
@@ -207,6 +239,23 @@
     function clicked() {
 
       document.getElementById('glist').style.display="flex";
+      
+    }
+
+
+    function hidelist1(valueDIv) {
+      document.getElementById("ft").value=valueDIv;
+      document.getElementById("glist1").style.display="none";
+    }
+    // function color(value){
+    //   document.body.style.backgroundColor="rgba(255, 0, 0, 0.4)";
+  
+    // }
+
+
+    function clicked1() {
+
+      document.getElementById('glist1').style.display="flex";
       
     }
 
