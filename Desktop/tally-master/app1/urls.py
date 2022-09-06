@@ -97,5 +97,6 @@ urlpatterns = [
     path('attendence2',views.attendence2,name='attendence2'),
     path('employe_category_secondary',views.employe_category_secondary,name='employe_category_secondary'),
     path('uqcform',views.uqcform,name='uqcform'),
+    path('stunits2',views.stunits2,name='stunits2'),
 
 ]

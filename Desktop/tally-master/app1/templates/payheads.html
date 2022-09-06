@@ -8,6 +8,32 @@
             justify-content: center;
             
         }
+        .form-popup {
+                visibility: hidden;       
+                position: fixed;
+                top: 230px;
+                right: 15px;
+                background-color: rgb(216, 232, 238); 
+                border: 1px solid #f1f1f1;
+                z-index: 9;
+                width: 300px;
+                height: 200px;
+            
+            }
+        .form-popup2 {
+                visibility: hidden;       
+                position: fixed;
+                top: 230px;
+                right: 15px;
+                background-color: rgb(216, 232, 238); 
+                border: 1px solid #f1f1f1;
+                z-index: 9;
+                width: 300px;
+                height: 200px;
+      
+      }
+
+        
     </style>
 
   <div class="m-0">
@@ -108,7 +134,7 @@
         </div>
 
 
-        <div class="row container-fluid hide p-2 m-0" id="under2">
+        <div class="row container-fluid hide1 p-2 m-0" id="under2">
             <div class="col-sm-6 m-0 p-0"> <label for="pan">Under</label></div>
             <div class="col-sm-6 m-0 p-0">
                 <select name="under" id="chqrng" class="form-control">
@@ -134,7 +160,7 @@
 
 
 
-        <div class="row container-fluid hide p-2 m-0" id="under3">
+        <div class="row container-fluid hide1 p-2 m-0" id="under3">
             <div class="col-sm-6 m-0 p-0"> <label for="pan">Under</label></div>
             <div class="col-sm-6 m-0 p-0">
                 <select name="under" id="chqrng" class="form-control">
@@ -152,7 +178,7 @@
         </div>
 
 
-        <div class="row container-fluid hide p-2 m-0" id="under4">
+        <div class="row container-fluid hide1 p-2 m-0" id="under4">
             <div class="col-sm-6 m-0 p-0"> <label for="pan">Under</label></div>
             <div class="col-sm-6 m-0 p-0">
                 <select name="under" id="chqrng" class="form-control">
@@ -166,7 +192,7 @@
             
         </div>
 
-        <div class="row container-fluid hide  p-2 m-0" id="under5">
+        <div class="row container-fluid hide1  p-2 m-0" id="under5">
             <div class="col-sm-6 m-0 p-0"> <label for="pan">Under</label></div>
             <div class="col-sm-6 m-0 p-0">
                 <select name="under" id="chqrng" class="form-control">
@@ -179,7 +205,7 @@
         </div>
 
 
-        <div class="row container-fluid hide  p-2 m-0" id="under6">
+        <div class="row container-fluid hide1  p-2 m-0" id="under6">
             <div class="col-sm-6 m-0 p-0"> <label for="pan">Under</label></div>
             <div class="col-sm-6 m-0 p-0">
                 <select name="under" id="chqrng" class="form-control">
@@ -240,7 +266,7 @@
 
         
 
-        <div class="row container-fluid hide   p-2 m-0" id="cpm">
+        <div class="row container-fluid hide1   p-2 m-0" id="cpm">
             <div class="col-sm-6 m-0 p-0"> <label for="rgtype" >Calculation Period</label></div>
             <div class="col-sm-6 m-0 p-0">
                 <select name="ctype" id="chqprnt" class="form-control">
@@ -249,23 +275,17 @@
             </div>
         </div>
 
-        <div class="row container-fluid hide  p-2 m-0" id="att">
+        <div class="row container-fluid hide1  p-2 m-0" id="att">
             <div class="col-sm-6 m-0 p-0"> <label for="rgtype" >Attendance/leave with pay</label></div>
             <div class="col-sm-6 m-0 p-0">
-                <select name="attendence with pay" onchange="attendence()" id="atp" class="form-control">
-                    <option value=""></option> 
-                    <option value="Not Applicable">Not Applicable</option> 
-                    <option name="under" value="primary">primary</option>
-                    {% for k in std %}
-                    <option name="under" value="{{k.name}}">{{k.name}}</option>
-                    {% endfor %}
-                    
-                    
-                </select>
+                <input class="custom-select-md form-control" type="text" 
+                                                id="primary-text" 
+                                               placeholder="" autocomplete="off"
+                                               onfocus="showList()" >
             </div>
         </div>
 
-        <div class="row container-fluid hide  p-2 m-0" id="att2">
+        <div class="row container-fluid hide1  p-2 m-0" id="att2">
             <div class="col-sm-6 m-0 p-0"> <label for="rgtype" >leave with out pay</label></div>
             <div class="col-sm-6 m-0 p-0">
                 <select name="Attendance with out pay" class="form-control">
@@ -277,7 +297,7 @@
             </div>
         </div>
 
-        <div class="row container-fluid hide   p-2 m-0" id="cp">
+        <div class="row container-fluid hide1   p-2 m-0" id="cp">
             <div class="col-sm-6 m-0 p-0"> <label for="rgtype" >Calculation Period</label></div>
             <div class="col-sm-6 m-0 p-0">
                 <select name="ctype" id="chqprnt" class="form-control">
@@ -290,9 +310,10 @@
             </div>
         </div>
 
-        <div class="row container-fluid hide  p-2 m-0" id="ptype">
+        <div class="row container-fluid hide1  p-2 m-0" id="ptype">
             <div class="col-sm-6 m-0 p-0"> <label for="pan">Production Type</label></div>
-            <div class="col-sm-6 m-0 p-0"><input type="text" class="form-control"  placeholder="" name="ptype"></div>
+            <div class="col-sm-6 m-0 p-0"><input type="text"  class="form-control" id="prdt" placeholder="" autocomplete="off"
+                onfocus="showListProduction()"></div>
             
         </div>
 
@@ -406,7 +427,7 @@
 
                     
 
-                    <div class="row hide container-fluid p-0 m-0" id="round" >
+                    <div class="row hide1 container-fluid p-0 m-0" id="round" >
 
                         <div class="col-sm-6 m-0 p-4"  style=" border-right: 1px solid rgba(128, 128, 128, 0.6);">
                             <h5 class="text-center mb-3">Round Off Information</h5>
@@ -421,7 +442,7 @@
                                     
                                 </select></div>
                             </div>
-                            <div class="row container-fluid  hide  p-2 m-0" id="limit">
+                            <div class="row container-fluid  hide1  p-2 m-0" id="limit">
                                 <div class="col-sm-4 m-0 p-0"> <label for="pan">Limit</label></div>
                                 <div class="col-sm-8 m-0 p-0"><input type="text" class="form-control"  placeholder="" name="limit"></div>
                                 
@@ -440,16 +461,81 @@
                         
                     
                     
-         </form>     
+         </form> 
+         <div class="form-popup" id="list-div" >
+  
+            <h6 style="background-color:rgb(17, 169, 240) ;color:white">List of Attendance</h6>
+        <hr >
+        <div>
+            <table >
+            <tr >
+                <td>
+                    <a href="{% url 'attendence2' %}"> <button
+                        type="submit"
+                        style="color: black;margin-left: 310%; width: 20%"
+                        class="custom-select-md form-control"
+                      >
+                        create
+                      </button> </a>
+                </td>
+            </tr>
+        
+            <tr>
+              <td>    
+        
+                {% for l in ph %}
+                <div onclick="hideList('{{l.name}}')" style="color: black;" >{{l.name}}</div>
+                {% endfor %}
+              </td>
+            </tr>  
+            
+            </table>
+        </div>
 
+        <div class="form-popup2" id="list-div2" >
+  
+            <h6 style="background-color:rgb(17, 169, 240) ;color:white">List of Production Types</h6>
+          <hr >
+          <div>
+            <table >
+                <tr >
+                    <td>
+                        <a href="{% url 'attendence2' %}"> <button
+                            type="submit"
+                            style="color: black;margin-left: 310%; width: 20%"
+                            class="custom-select-md form-control"
+                          >
+                            create
+                          </button> </a>
+                    </td>
+                </tr>
+                
+                  
+            <tr>
+              <td>    
+          
+                {% for l in ph2 %}
+              <div onclick="hideListProduction('{{l.name}}')" style="color:black;" >{{l.name}}</div>
+              {% endfor %}
+              </td>
+            </tr>  
+            
+            </table>
+          </div>
+          
+          </div>
+        
+            
 
+  </div>
+  
 
 
 
                     
  
 <style>
-    .hide{
+    .hide1{
         display: none;
         
         flex-direction: row;
@@ -477,6 +563,29 @@
 
 
 <script>
+
+function showList(){
+                    document.getElementById('list-div').style.visibility="visible";
+                 }
+                
+
+
+                 function hideList(valueDIv) {
+                    document.getElementById("primary-text").value=valueDIv;
+                   
+
+                    document.getElementById("list-div").style.visibility = "hidden";
+                    
+                    
+                }
+                function showListProduction(){
+        document.getElementById("list-div2").style.visibility="visible";
+    }
+    function hideListProduction(valueDIv) {
+        document.getElementById("prdt").value=valueDIv;
+        document.getElementById("list-div2").style.visibility = "hidden";
+    }
+
 
     function show(){
         var static =document.getElementById('cal');

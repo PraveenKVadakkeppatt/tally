@@ -1131,9 +1131,14 @@ def payhead2(request):
 
 
 def stunits(request):
-    ps=units()
+    ps=units.objects.all()
     uq=uqc.objects.all()
     return render(request,'stunits.html',{'ps':ps,'uq':uq}) 
+
+def stunits2(request):
+    ps=units.objects.all()
+    uq=uqc.objects.all()
+    return render(request,'stunits2.html',{'ps':ps,'uq':uq}) 
 
 def add_units(request):
     if request.method=='POST':
@@ -1143,7 +1148,7 @@ def add_units(request):
         std.formal_name=request.POST.get('formal')
         std.uqc1=request.POST.get('uqc1')
         std.number_of_decimal_places=request.POST.get('decimal') 
-        std.first_unit=request.POST.get('ft')
+        std.first_unit=request.POST.get('ft1')
         std.conversion=request.POST.get('con')
         std.second_unit=request.POST.get('sec')  
         std.save()
@@ -1261,8 +1266,10 @@ def add_payhead(request):
         return redirect('payheads')
 
 def payheads(request):
+    ph=Create_attendence.objects.filter(type="Attendance/Leave with pay")
+    ph2=Create_attendence.objects.filter(type="Production")
     std=Create_attendence.objects.all()
-    return render(request,'payheads.html',{'std':std})   
+    return render(request,'payheads.html',{'std':std,'ph':ph,'ph2':ph2})   
 
 
 def payvoucher(request):

@@ -96,10 +96,10 @@
                 </div>
 
 
-                <div id="ft1" class="row container-fluid hide   p-2 m-0">
-                    <div class="col-sm-6 m-0 p-0"> <label for="ft">First unit</label></div>
+                <div id="ft" class="row container-fluid hide   p-2 m-0">
+                    <div class="col-sm-6 m-0 p-0"> <label for="dcml">First unit</label></div>
                     <div class="col-sm-6 m-0 p-0"> 
-                    <input name="ft1" type="text" onclick="clicked1()" id="ft" class="form-control"  placeholder="" ></div>
+                    <input name="ft" type="text" onclick="clicked1()" id="ft" class="form-control"  placeholder="" ></div>
                     
                 </div>
 
@@ -193,11 +193,11 @@
                 <div class="col-sm-3  " style="margin-top:-350px" >
                     <div class="hide" id="glist1">
                         <div class="col-sm-8 m-0 p-0">
-                            <div class="card1" style="background-color: #000;">
+                            <div class="card" style="background-color: #000;">
                                 <div class="card-body">
                                     <div class="card-title text-center custom-select-md for">
                                         <h7>Unit Creation</h7><hr/>
-                                        <a href="{% url 'stunits2' %}" class="btn btn-info ">Create</a>
+                                        <a href="{% url 'employe_category_secondary' %}" class="btn btn-info ">Create</a>
                     
                                     </div>
                                     <ul class="list-group ">
@@ -243,8 +243,8 @@
     }
 
 
-    function hidelist1(valueDIv1) {
-      document.getElementById("ft").value=valueDIv1;
+    function hidelist1(valueDIv) {
+      document.getElementById("ft").value=valueDIv;
       document.getElementById("glist1").style.display="none";
     }
     // function color(value){
@@ -277,7 +277,7 @@
                 document.getElementById('uqc1').style.display="flex";
 
                 document.getElementById('num').style.display="flex";
-                document.getElementById('ft1').style.display="none";
+                document.getElementById('ft').style.display="none";
                 document.getElementById('con').style.display="none";
                 document.getElementById('sd').style.display="none";
             }
@@ -289,7 +289,7 @@
                 document.getElementById('uqc1').style.display="none";
 
                 document.getElementById('num').style.display="none";
-                document.getElementById('ft1').style.display="flex";
+                document.getElementById('ft').style.display="flex";
                 document.getElementById('con').style.display="flex";
                 document.getElementById('sd').style.display="flex";
             }
@@ -300,7 +300,7 @@
                 document.getElementById('uqc1').style.display="none";
 
                 document.getElementById('num').style.display="none";
-                document.getElementById('ft1').style.display="none";
+                document.getElementById('ft').style.display="none";
                 document.getElementById('con').style.display="none";
                 document.getElementById('sd').style.display="none";
             }
